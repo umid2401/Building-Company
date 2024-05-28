@@ -346,7 +346,7 @@ $cardbgColor: #2b1731;
       }
     }
   }
-  .company{
+  .company {
     width: 100%;
     height: 440px;
     background-image: url("..//..//public/Images/rating.9f9cda4caaf5d31ba7bb.png");
@@ -356,41 +356,45 @@ $cardbgColor: #2b1731;
     display: flex;
     justify-content: center;
     align-items: center;
-    .company-wrapper{
+    .company-wrapper {
       @include wrapperStyle();
-      h2{
+      h2 {
         @include styleh2();
-        color:#f5f5f5;
+        color: #f5f5f5;
         font-size: clamp(18px, 4vw, 24px);
-        margin: 1rem 0 2rem 0;}
-      .count-boxes{
+        margin: 1rem 0 2rem 0;
+      }
+      .count-boxes {
         @include flexStart();
         align-items: start;
         gap: 1.5rem;
-        
-        .count{
-          
-          span{
+
+        .count {
+          span {
             color: #f5f5f5;
-            font-size: clamp(28px,4vw,36px);
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: clamp(28px, 4vw, 36px);
+            font-family: system-ui, -apple-system, BlinkMacSystemFont,
+              "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+              "Helvetica Neue", sans-serif;
             margin: 1rem 0;
             font-weight: bold;
           }
-          p{
+          p {
             color: #f5f5f5;
-            font-size: clamp(20px,4vw,26px);
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: clamp(20px, 4vw, 26px);
+            font-family: system-ui, -apple-system, BlinkMacSystemFont,
+              "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+              "Helvetica Neue", sans-serif;
             margin: 1rem 0;
-            
           }
         }
         @media screen and(max-width:"768px") {
           flex-wrap: wrap;
-          gap:1rem;
-          .count{
-            span, p{
-              margin:.5rem 0;
+          gap: 1rem;
+          .count {
+            span,
+            p {
+              margin: 0.5rem 0;
             }
           }
         }
@@ -726,21 +730,19 @@ $cardbgColor: #2b1731;
   background: #8b7438;
   .footer-wrapper {
     @include wrapperStyle();
-    
+
     .cards {
       padding: 2rem 0;
       @include flexStart();
       align-items: start;
       width: 100%;
       gap: 5rem;
-    
-      
+
       flex-wrap: nowrap;
       .card {
-        width: calc(100%/3);
-        
+        width: calc(100% / 3);
+
         ul {
-          
           list-style: none;
           cursor: pointer;
           position: relative;
@@ -757,7 +759,7 @@ $cardbgColor: #2b1731;
         .logo {
           margin: 1rem 0;
           display: flex;
-          gap: .6rem;
+          gap: 0.6rem;
           align-items: center;
           cursor: pointer;
           .logo-text {
@@ -782,14 +784,14 @@ $cardbgColor: #2b1731;
               "Helvetica Neue", sans-serif;
           }
         }
-        .icons{
+        .icons {
           margin: 1rem 0;
           display: flex;
           align-items: center;
           gap: 1rem;
-          .link{
-            a{
-              .brand-icon{
+          .link {
+            a {
+              .brand-icon {
                 color: #f5f5f5;
                 font-size: 1.6rem;
               }
@@ -990,12 +992,12 @@ $cardbgColor: #2b1731;
       }
     }
   }
-  .footer{
-    .footer-wrapper{
-      .cards{
-         flex-wrap: wrap;
-         gap: 0rem;
-        .card{
+  .footer {
+    .footer-wrapper {
+      .cards {
+        flex-wrap: wrap;
+        gap: 0rem;
+        .card {
           width: 100%;
         }
       }
