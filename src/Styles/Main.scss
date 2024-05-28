@@ -1,0 +1,1107 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@mixin wrapperStyle {
+  margin: 0 auto;
+  max-width: 1140px;
+  width: 85%;
+  @media screen and (max-width: "992px") {
+    max-width: 768px;
+    width: 85%;
+  }
+  @media screen and (max-width: "768px") {
+    max-width: 592px;
+    width: 85%;
+  }
+  @media screen and (max-width: "592px") {
+    max-width: 450px;
+    width: 85%;
+  }
+}
+@mixin styleh1 {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 500;
+  line-height: 70px;
+  font-size: clamp(24px, 4vw, 56px);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-transform: uppercase;
+}
+@mixin styleh2 {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 500;
+  font-size: clamp(24px, 4vw, 30px);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-transform: capitalize;
+}
+@mixin stylep {
+  color: #fff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  line-height: 32px;
+  font-size: clamp(24px, 4vw, 22px);
+  font-weight: 400;
+}
+@mixin styleh3 {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 500;
+  font-size: clamp(24px, 4vw, 28px);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@mixin flexBeetwen {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@mixin flexStart {
+  display: flex;
+  align-items: center;
+}
+@mixin buttonStyle {
+  padding: 0.6rem 1.5rem;
+  font-size: clamp(16px, 4vw, 17px);
+  border: 2px solid #fff;
+  border-radius: 1.8rem;
+  color: #fff;
+  background: transparent;
+  transition: 0.5s ease-in-out;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  cursor: pointer;
+}
+$bgColor: #ffb400;
+$buttonColor: #fff;
+$cardbgColor: #2b1731;
+.header {
+  margin: 0 0 2rem 0;
+  background-image: url("..//../public/Images/building_bg.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.9;
+  height: 640px;
+  width: 100%;
+  position: relative;
+  z-index: 105;
+  &::before {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.15);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: 1;
+  }
+  .navs {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 101;
+    .mobile-menu {
+      padding: 2rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 102;
+      transform: translateX(-100%);
+      width: 80%;
+      height: 100vh;
+      background: #8b7438;
+      transition: transform 0.5s ease-in-out;
+      &.move {
+        transform: translateX(0);
+      }
+      .close-menu {
+        position: absolute;
+        right: 0;
+        top: 0;
+        margin: 2rem 2rem 0 0;
+        cursor: pointer;
+        .x-mark {
+          color: #f5f5f5;
+          font-size: 1.6rem;
+        }
+      }
+      .mobile-links {
+        list-style: none;
+        padding: 1rem 1rem 0.5rem 1rem;
+        li {
+          margin: 0.5rem 0;
+          font-weight: 400;
+          color: $buttonColor;
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+            Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+            sans-serif;
+        }
+      }
+      .mobile-langs {
+        padding: 0 1rem;
+        display: flex;
+        gap: 0.5rem;
+        span {
+          font-weight: 400;
+          color: $buttonColor;
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+            Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+            sans-serif;
+        }
+      }
+    }
+    .navbar {
+      @include flexBeetwen();
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 3rem;
+      position: relative;
+      .menu,
+      .phone {
+        padding: 0.4rem;
+        width: 2.5rem;
+        height: 2.5rem;
+        display: none;
+        border-radius: 50%;
+        background: #2b1731;
+        position: relative;
+        cursor: pointer;
+        .navbar-icon {
+          margin: 0 auto;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+      .left-links,
+      .right-links {
+        list-style: none;
+        cursor: pointer;
+        font-size: clamp(12px, 4vw, 18px);
+        @include flexStart();
+        gap: 1.5rem;
+        position: relative;
+        li {
+          font-weight: 400;
+          color: $buttonColor;
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+            Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+            sans-serif;
+        }
+      }
+      .langs {
+        text-align: center;
+        position: relative;
+        cursor: pointer;
+        > span {
+          color: $buttonColor;
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+            Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+            sans-serif;
+          font-size: clamp(12px, 4vw, 18px);
+          font-weight: 500;
+        }
+
+        .hide-lang {
+          position: absolute;
+          z-index: 100;
+          padding: 1rem 1rem;
+          transition: 0.5s ease-in-out;
+          left: 0;
+          top: 120%;
+          border-radius: 0.5rem;
+          flex-direction: column;
+          background: #2a2a2a;
+          cursor: pointer;
+          span {
+            font-weight: 500;
+            color: white;
+            display: block;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont,
+              "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+              "Helvetica Neue", sans-serif;
+          }
+        }
+      }
+      .logo {
+        @include flexStart();
+        gap: 0.5rem;
+        .logo-text {
+          span {
+            display: block;
+            color: $buttonColor;
+            font-size: clamp(14px, 4vw, 18px);
+            font-weight: bold;
+            margin: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont,
+              "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+              "Helvetica Neue", sans-serif;
+          }
+        }
+        .logo-icon {
+          font-size: 2.5rem;
+        }
+      }
+    }
+  }
+  .header-wrapper {
+    @include wrapperStyle();
+    .main {
+      width: 100%;
+      display: block;
+      .main-title {
+        position: absolute;
+        z-index: 100;
+        top: 50%;
+        transform: translate(0, -50%);
+        h1 {
+          @include styleh1();
+          color: $buttonColor;
+          margin: 2rem 0;
+          width: 100%;
+          max-width: 300px;
+        }
+        p {
+          @include stylep();
+          margin: 2rem 0;
+        }
+        .btn-group {
+          display: flex;
+          gap: 1rem;
+          margin: 2rem 0;
+          button {
+            @include buttonStyle();
+            cursor: pointer;
+            &:hover {
+              color: #2b1731;
+              background: #ffffff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.service {
+  margin: 2rem 0;
+  .service-wrapper {
+    @include wrapperStyle();
+    margin: 2rem auto;
+    h2 {
+      @include styleh2();
+      color: #2a2a2a;
+      margin: 2rem 0;
+      text-align: center;
+    }
+    .service-cards {
+      @include flexStart();
+      flex-wrap: wrap;
+      width: 100%;
+      margin: 0 auto;
+      gap: 2rem;
+      .card {
+        background: $cardbgColor;
+        height: 200px;
+        border-radius: 0.8rem;
+        overflow: hidden;
+        position: relative;
+        z-index: 99;
+        .card-image {
+          position: absolute;
+          right: 0;
+          bottom: -2%;
+          z-index: -1;
+          img {
+            height: 100%;
+          }
+        }
+        .card-text {
+          width: 55%;
+          position: absolute;
+          bottom: 20%;
+          left: 2rem;
+          p {
+            @include stylep();
+            font-size: clamp(18px, 4vw, 20px);
+          }
+        }
+        &.card1,
+        &.card4 {
+          width: 55%;
+        }
+        &.card2,
+        &.card3 {
+          width: 40%;
+        }
+      }
+    }
+  }
+  .company{
+    width: 100%;
+    height: 440px;
+    background-image: url("..//..//public/Images/rating.9f9cda4caaf5d31ba7bb.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .company-wrapper{
+      @include wrapperStyle();
+      h2{
+        @include styleh2();
+        color:#f5f5f5;
+        font-size: clamp(18px, 4vw, 24px);
+        margin: 1rem 0 2rem 0;}
+      .count-boxes{
+        @include flexStart();
+        align-items: start;
+        gap: 1.5rem;
+        
+        .count{
+          
+          span{
+            color: #f5f5f5;
+            font-size: clamp(28px,4vw,36px);
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            margin: 1rem 0;
+            font-weight: bold;
+          }
+          p{
+            color: #f5f5f5;
+            font-size: clamp(20px,4vw,26px);
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            margin: 1rem 0;
+            
+          }
+        }
+        @media screen and(max-width:"768px") {
+          flex-wrap: wrap;
+          gap:1rem;
+          .count{
+            span, p{
+              margin:.5rem 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  .dream {
+    h2 {
+      @include styleh2();
+      font-size: clamp(20px, 4vw, 24px);
+      color: #2a2a2a;
+      text-align: center;
+      margin: 1rem 0;
+    }
+    .dream-home {
+      margin: 2rem 0;
+      @include flexStart();
+      width: 100%;
+      flex-wrap: wrap;
+      .dream_card {
+        width: calc(100% / 3);
+        height: 320px;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
+
+.project {
+  .project-wrapper {
+    @include wrapperStyle();
+    h2 {
+      @include styleh2();
+      @include styleh2();
+      font-size: clamp(20px, 4vw, 24px);
+      color: #2a2a2a;
+      text-align: center;
+      margin: 1rem 0;
+    }
+    .project-cards {
+      width: 100%;
+      margin: 0 auto;
+      @include flexBeetwen();
+      gap: 2rem;
+      flex-wrap: wrap;
+      .project-card {
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 320px;
+          top: 0;
+          left: 0;
+          background: rgba(0, 0, 0, 0.3);
+        }
+        width: 48%;
+        height: 320px;
+        position: relative;
+        overflow: hidden;
+        .project-image {
+          width: 100%;
+          height: 100%;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+        .project-text {
+          height: 200px;
+          transform: translateY(-20%);
+          transition: transform 0.5s ease-in-out;
+          h3 {
+            @include styleh3();
+            color: #f5f5f5;
+            margin: 0 0 1rem 2rem;
+          }
+          p {
+            @include stylep();
+            margin-left: 2rem;
+            font-size: clamp(16px, 4vw, 18px);
+            font-weight: bold;
+            line-height: 25px;
+          }
+        }
+        &:hover {
+          .project-text {
+            transform: translateY(-120%);
+          }
+        }
+      }
+    }
+  }
+}
+.news {
+  background: #f5f5f5;
+  margin: 2rem 0;
+  padding: 1rem 0 0 0;
+  .news-wrapper {
+    @include wrapperStyle();
+    h2 {
+      @include styleh2();
+      @include styleh2();
+      font-size: clamp(20px, 4vw, 24px);
+      color: #2a2a2a;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .news-cards {
+      @include flexBeetwen();
+      flex-wrap: wrap;
+      row-gap: 2rem;
+      column-gap: 1rem;
+      .news-card {
+        width: 48%;
+        height: 300px;
+        background-color: #fff;
+        @include flexStart();
+        align-items: start;
+        border-radius: 1.8rem;
+        overflow: hidden;
+        flex-wrap: nowrap;
+        @media screen and (max-width: "1080px") {
+          width: 100%;
+        }
+        .left-card-image {
+          width: 40%;
+          height: 100%;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+        .right-card-text {
+          width: 60%;
+          padding: 0rem 1rem;
+          p {
+            @include stylep();
+            color: #2a2a2a;
+            font-size: 15px;
+            line-height: 20px;
+            width: 100%;
+          }
+          h3 {
+            @include styleh3();
+            color: #2a2a2a;
+            font-size: 18px;
+            margin: 0.5rem 0;
+          }
+          button {
+            padding: 0.4rem 1.5rem;
+            margin-top: 0.5rem;
+            border-radius: 1rem;
+            color: #f5f5f5;
+            background: $cardbgColor;
+            border: none;
+            transition: 0.5s ease-in-out;
+            font-size: 15px;
+            &:hover {
+              color: #ffb400;
+              background: #2a2a2a;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+  .news-images {
+    background: #fff;
+    margin: 3rem 0;
+    h2 {
+      @include styleh2();
+      @include styleh2();
+      font-size: clamp(16px, 4vw, 22px);
+      color: #2a2a2a;
+      text-align: center;
+      padding: 2rem 0;
+    }
+    .boxes {
+      @include flexStart();
+      flex-wrap: wrap;
+      .box {
+        width: calc(100% / 4);
+        height: 400px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
+
+.information {
+  width: 100%;
+  height: 560px;
+  background-image: url("..//../public/Images/person.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  .information-wrapper {
+    @include wrapperStyle();
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    h3 {
+      @include styleh3();
+      color: #f5f5f5;
+      margin: 2rem 0;
+      font-size: clamp(24px, 4vw, 35px);
+    }
+    h2 {
+      @include styleh2();
+      color: #f5f5f5;
+      font-size: clamp(28px, 4vw, 45px);
+      margin: 2rem 0;
+    }
+    p {
+      @include stylep();
+      font-size: clamp(14px, 4vw, 17px);
+      line-height: 30px;
+      margin: 2rem 0;
+      width: 50%;
+    }
+    button {
+      @include buttonStyle();
+      margin: 2rem 0;
+      transition: 0.5s ease-in-out;
+      &:hover {
+        background: #f5f5f5;
+        color: $cardbgColor;
+      }
+    }
+  }
+}
+
+.contact {
+  background: $cardbgColor;
+  .contact-wrapper {
+    @include wrapperStyle();
+    display: flex;
+    justify-content: center;
+    padding: 8rem 2rem;
+    .form-text {
+      width: 80%;
+      min-height: 440px;
+      background-image: url("..//../public/Images/formbg.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-radius: 1.8rem;
+      overflow: hidden;
+      padding: 2rem;
+      h2 {
+        @include styleh2();
+        color: #f5f5f5;
+        text-transform: none;
+        width: 40%;
+        margin: 2rem 0;
+      }
+      .form {
+        form {
+          display: grid;
+          gap: 2rem;
+          .name,
+          .message,
+          .number {
+            width: 60%;
+          }
+          .name,
+          .number {
+            input {
+              width: 100%;
+              height: 2.8rem;
+              border-radius: 1.5rem;
+              border: none;
+              background: #f5f5f5;
+              outline: none;
+              padding: 0 0.5rem;
+              &::placeholder {
+                color: #2a2a2a;
+                font-size: clamp(14px, 4vw, 16px);
+                margin-left: 1rem;
+                font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                  "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+                  "Helvetica Neue", sans-serif;
+                opacity: 0.9;
+              }
+            }
+          }
+
+          .message {
+            textarea {
+              width: 100%;
+              border-radius: 1.5rem;
+              border: none;
+              background: #f5f5f5;
+              outline: none;
+              resize: none;
+              height: 180px;
+              padding: 0.5rem;
+              &::placeholder {
+                color: #2a2a2a;
+                font-size: clamp(14px, 4vw, 16px);
+                margin-left: 1rem;
+                font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                  "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+                  "Helvetica Neue", sans-serif;
+                opacity: 0.9;
+              }
+            }
+          }
+          button {
+            @include buttonStyle();
+            width: 25%;
+          }
+        }
+      }
+    }
+  }
+}
+.footer {
+  background: #8b7438;
+  .footer-wrapper {
+    @include wrapperStyle();
+    
+    .cards {
+      padding: 2rem 0;
+      @include flexStart();
+      align-items: start;
+      width: 100%;
+      gap: 5rem;
+    
+      
+      flex-wrap: nowrap;
+      .card {
+        width: calc(100%/3);
+        
+        ul {
+          
+          list-style: none;
+          cursor: pointer;
+          position: relative;
+          li {
+            font-size: clamp(16px, 4vw, 20px);
+            margin: 1rem 0;
+            font-weight: 400;
+            color: $buttonColor;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont,
+              "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+              "Helvetica Neue", sans-serif;
+          }
+        }
+        .logo {
+          margin: 1rem 0;
+          display: flex;
+          gap: .6rem;
+          align-items: center;
+          cursor: pointer;
+          .logo-text {
+            width: 100px;
+            span {
+              font-weight: bold;
+              font-size: clamp(16px, 4vw, 20px);
+              color: $buttonColor;
+              font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+                "Helvetica Neue", sans-serif;
+            }
+          }
+        }
+        .pi {
+          span {
+            font-size: clamp(16px, 4vw, 20px);
+            font-weight: 500;
+            color: $buttonColor;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont,
+              "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+              "Helvetica Neue", sans-serif;
+          }
+        }
+        .icons{
+          margin: 1rem 0;
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          .link{
+            a{
+              .brand-icon{
+                color: #f5f5f5;
+                font-size: 1.6rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: "992px") {
+  .header {
+    .navs {
+      .navbar {
+        background: #2a2a2a;
+        .left-links {
+          display: none;
+        }
+        .langs {
+          display: none;
+        }
+        .right-links {
+          display: none;
+        }
+        .menu,
+        .phone {
+          display: block;
+        }
+      }
+    }
+    .header-wrapper {
+      .main {
+        .main-title {
+          h1 {
+            line-height: 50px;
+          }
+          p {
+          }
+          .btn-group {
+          }
+        }
+      }
+    }
+  }
+  .service {
+    .service-wrapper {
+      .service-cards {
+        flex-wrap: wrap;
+        .card {
+          .card-text {
+            width: 80%;
+          }
+          &.card1,
+          &.card2,
+          &.card3,
+          &.card4 {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  .project {
+    .project-wrapper {
+      .project-cards {
+        .project-card {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .contact {
+    .contact-wrapper {
+      .form-text {
+        h2 {
+          width: 100%;
+          text-align: center;
+        }
+        .form {
+          form {
+            gap: 1.5rem;
+            .name,
+            .message,
+            .number {
+              width: 100%;
+            }
+            button {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: "768px") {
+  .header {
+    height: 480px;
+    .navs {
+      .navbar {
+      }
+    }
+    .header-wrapper {
+      .main {
+        .main-title {
+          h1 {
+            line-height: 40px;
+          }
+          p {
+          }
+          .btn-group {
+            flex-wrap: wrap;
+          }
+        }
+      }
+    }
+  }
+  .service {
+    .dream {
+      h2 {
+      }
+      .dream-home {
+        .dream_card {
+          width: calc(100% / 2);
+        }
+      }
+    }
+  }
+  .news {
+    .news-wrapper {
+      .news-cards {
+        .news-card {
+          width: 100%;
+          height: auto;
+          flex-wrap: wrap;
+          border-radius: 0.5rem;
+          .left-card-image {
+            width: 100%;
+          }
+          .right-card-text {
+            width: 100%;
+            padding: 1rem 1rem 2rem 1rem;
+            button {
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+    .news-images {
+      .boxes {
+        .box {
+          width: calc(100% / 3);
+        }
+      }
+    }
+  }
+  .information {
+    .information-wrapper {
+      h3 {
+        margin: 0.8rem 0;
+      }
+      h2 {
+        margin: 0.8rem 0;
+      }
+      p {
+        margin: 0.8rem 0;
+        width: 80%;
+      }
+      button {
+        margin: 0.8rem 0;
+      }
+    }
+  }
+  .contact {
+    .contact-wrapper {
+      padding: 2rem 1rem;
+      width: 95%;
+      .form-text {
+        width: 100%;
+        padding: 1rem;
+        border-radius: 1.2rem;
+        h2 {
+          width: 100%;
+          text-align: center;
+        }
+        .form {
+          width: 100%;
+          form {
+            .name,
+            .number {
+              height: 2.2rem;
+            }
+            button {
+            }
+          }
+        }
+      }
+    }
+  }
+  .footer{
+    .footer-wrapper{
+      .cards{
+         flex-wrap: wrap;
+         gap: 0rem;
+        .card{
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: "568px") {
+  .header {
+    margin: 1rem 0;
+    .navs {
+      .navbar {
+        padding: 2rem 1rem;
+        .logo {
+          .logo-icon {
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+    .header-wrapper {
+      .main {
+        .main-title {
+          h1 {
+            margin: 1.2rem 0;
+            line-height: 30px;
+          }
+          p {
+            margin: 1.2rem 0;
+          }
+          .btn-group {
+            margin: 1.2rem 0;
+          }
+        }
+      }
+    }
+  }
+  .service {
+    margin: 1rem 0;
+    .service-wrapper {
+      margin: 1rem auto;
+      h2 {
+        margin: 1rem 0;
+      }
+      .service-cards {
+        gap: 1.2rem;
+        .card {
+          .card-text {
+          }
+          &.card1,
+          &.card2,
+          &.card3,
+          &.card4 {
+          }
+        }
+      }
+    }
+    .dream {
+      h2 {
+      }
+      .dream-home {
+        margin: 0;
+
+        .dream_card {
+          width: calc(100%);
+
+          img {
+          }
+        }
+      }
+    }
+  }
+  .project {
+    .project-wrapper {
+      .project-cards {
+        gap: 1rem;
+        .project-card {
+          width: 100%;
+          height: 270px;
+
+          .project-text {
+            p,
+            h3 {
+              margin-left: 1rem;
+              margin-bottom: 0.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  .news {
+    .news-wrapper {
+      h2 {
+        margin-bottom: 1rem;
+      }
+      .news-cards {
+      }
+    }
+    .news-images {
+      .boxes {
+        .box {
+          width: calc(100% / 2);
+          height: 280px;
+        }
+      }
+    }
+  }
+}
