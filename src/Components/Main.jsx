@@ -4,7 +4,6 @@ import {
   faBars,
   faBuildingColumns,
   faPhone,
-  faTeletype,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import "../Styles/Main.scss";
@@ -504,12 +503,12 @@ export default function Main() {
               </div>
               <div className="icons">
                 <div className="link">
-                  <a href="">
+                  <a href="https://t.me/webjuniors_01">
                     <FontAwesomeIcon className="brand-icon" icon={faTelegram} />
                   </a>
                 </div>
                 <div className="link">
-                  <a href="">
+                  <a href="https://t.me/webjuniors_01">
                     <FontAwesomeIcon
                       className="brand-icon"
                       icon={faInstagram}
