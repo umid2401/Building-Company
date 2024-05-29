@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import {
   faBars,
-  faBuildingColumns,
   faXmark,
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
@@ -17,10 +16,12 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 export default function Main() {
   const { t, i18n } = useTranslation();
-  const [lang, setLang] = useState(localStorage.getItem("lan","UZ"));
+  const [lang, setLang] = useState(localStorage.getItem("lan")||"UZ");
+ 
+ 
   useEffect(()=>{
     localStorage.setItem("lan",lang);
-  },[lang])
+  },[lang]);
   const new_card = [
     {
       id: 1,
@@ -181,17 +182,24 @@ export default function Main() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [lang]);
-  const scrollTosection = (section) => {
+  }, []);
+  const fun = (section) =>{
     const yOffset = -navbar.current.offsetHeight; // 
     const y =
       section.current.getBoundingClientRect().top +
       window.pageYOffset +
       yOffset;
     window.scrollTo({ top: y, behavior: "smooth" });
+  }
+  const scrollTosection = (section) => {
+    fun(section)
     if (window.innerWidth < 968) {
       setMenu(!menu);
     }
+  };
+  
+  const scrollTosectionMobile = (section) => {
+     fun(section);
   };
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
@@ -263,6 +271,7 @@ export default function Main() {
 
     
   };
+  
   const scrollToTop = () => {
     const scrollStep = -window.scrollY / (500 / 15); // 500ms da yuqoriga borish uchun harakat tezligi
     const scrollInterval = setInterval(() => {
@@ -598,11 +607,11 @@ export default function Main() {
             </div>
             <div className="card">
               <ul>
-                <li onClick={() => scrollTosection(information)}>{t("Our company")} </li>
-                <li onClick={() => scrollTosection(service)}>{t("Enterprises")} </li>
-                <li onClick={() => scrollTosection(information)}>{t("About Us")} </li>
-                <li onClick={() => scrollTosection(news)}>{t("News")} </li>
-                <li onClick={() => scrollTosection(projects)}>{t("Our Projects")} </li>
+                <li onClick={() => scrollTosectionMobile(information)}>{t("Our company")} </li>
+                <li onClick={() => scrollTosectionMobile(service)}>{t("Enterprises")} </li>
+                <li onClick={() => scrollTosectionMobile(information)}>{t("About Us")} </li>
+                <li onClick={() => scrollTosectionMobile(news)}>{t("News")} </li>
+                <li onClick={() => scrollTosectionMobile(projects)}>{t("Our Projects")} </li>
               </ul>
             </div>
             <div className="card">

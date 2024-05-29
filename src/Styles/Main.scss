@@ -732,18 +732,15 @@ $cardbgColor: #2b1731;
   background: #8b7438;
   .footer-wrapper {
     @include wrapperStyle();
-
     .cards {
       padding: 2rem 0;
       @include flexStart();
       align-items: start;
       width: 100%;
       gap: 5rem;
-
       flex-wrap: nowrap;
       .card {
         width: calc(100% / 3);
-
         ul {
           list-style: none;
           cursor: pointer;
@@ -1081,6 +1078,21 @@ $cardbgColor: #2b1731;
         .box {
           width: calc(100% / 2);
           height: 280px;
+        }
+      }
+    }
+  }
+  .footer{
+    .footer-wrapper{
+      .cards{
+        .card{
+          .logo{
+            .logo-image{
+              img{
+                width: 48px;
+              }
+            }
+          }
         }
       }
     }
