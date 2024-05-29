@@ -17,7 +17,6 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 export default function Main() {
   const { t, i18n } = useTranslation();
-
   const [lang, setLang] = useState(localStorage.getItem("lan","UZ"));
   useEffect(()=>{
     localStorage.setItem("lan",lang);
@@ -167,7 +166,6 @@ export default function Main() {
   const projects = useRef();
   const information = useRef();
   useEffect(() => {
-   
     AOS.init({ duration: 1000 });
     const handleScroll = () => {
       const navbarHeight = 60;
@@ -206,7 +204,6 @@ export default function Main() {
       setLang("RU");
     }
     if(window.innerWidth>992){
-
       setShowBadge(!showBadge);
     }
     checkFunction();
@@ -266,7 +263,19 @@ export default function Main() {
 
     
   };
-
+  const scrollToTop = () => {
+    const scrollStep = -window.scrollY / (500 / 15); // 500ms da yuqoriga borish uchun harakat tezligi
+    const scrollInterval = setInterval(() => {
+      if (window.scrollY !== 0) {
+        window.scrollBy(0, scrollStep);
+      } else {
+        clearInterval(scrollInterval);
+      }
+    }, 15); // 
+  };
+  const callContact = () => {
+    window.open('tel:+998945142343', '_self'); // Telefon raqami o'rniga kerakli raqamni yozing
+  };
   return (
     <div>
       <header className="header">
@@ -320,16 +329,17 @@ export default function Main() {
             </ul>
             <ul className="logo">
               <div className="logo-image">
-                <FontAwesomeIcon
+                {/* <FontAwesomeIcon
                   className="logo-icon"
                   icon={faBuildingColumns}
                   style={{ color: "#f5f5f5" }}
-                />
+                /> */}
+                <img src="Images/silhouette.png" alt="" />
               </div>
-              <div className="logo-text">
+              {/* <div className="logo-text">
                 <span>Building</span>
                 <span>Company</span>
-              </div>
+              </div> */}
             </ul>
             <ul className="right-links">
               <li>{t("Our advantages")}</li>
@@ -354,7 +364,7 @@ export default function Main() {
                 </div>
               )}
             </div>
-            <div className="phone">
+            <div className="phone" onClick={callContact}>
               <FontAwesomeIcon
                 className="navbar-icon"
                 icon={faPhone}
@@ -550,22 +560,22 @@ export default function Main() {
           </div>
         </div>
       </section>
-    
       <footer className="footer">
         <div className="footer-wrapper">
           <div className="cards">
             <div className="card">
               <div className="logo">
                 <div className="logo-image">
-                  <FontAwesomeIcon
+                  {/* <FontAwesomeIcon
                     className="logo-icon"
                     icon={faBuildingColumns}
                     style={{ color: "#f5f5f5", fontSize: "2.5rem" }}
-                  />
+                  /> */}
+                  <img onClick={scrollToTop} src="Images/silhouette.png" alt="" />
                 </div>
-                <div className="logo-text">
+                {/* <div className="logo-text">
                   <span>Building Company </span>
-                </div>
+                </div> */}
               </div>
               <div className="pi">
                 <span>{t("Subscribe to our social networks")} </span>
@@ -588,11 +598,11 @@ export default function Main() {
             </div>
             <div className="card">
               <ul>
-                <li>{t("Our company")} </li>
-                <li>{t("Enterprises")} </li>
-                <li>{t("About Us")} </li>
-                <li>{t("News")} </li>
-                <li>{t("Our Projects")} </li>
+                <li onClick={() => scrollTosection(information)}>{t("Our company")} </li>
+                <li onClick={() => scrollTosection(service)}>{t("Enterprises")} </li>
+                <li onClick={() => scrollTosection(information)}>{t("About Us")} </li>
+                <li onClick={() => scrollTosection(news)}>{t("News")} </li>
+                <li onClick={() => scrollTosection(projects)}>{t("Our Projects")} </li>
               </ul>
             </div>
             <div className="card">

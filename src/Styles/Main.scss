@@ -105,6 +105,7 @@ $cardbgColor: #2b1731;
   .navs {
     width: 100%;
     position: fixed;
+   
     top: 0;
     z-index: 101;
     .mobile-menu {
@@ -136,8 +137,9 @@ $cardbgColor: #2b1731;
         list-style: none;
         padding: 1rem 1rem 0.5rem 1rem;
         li {
-          margin: 0.5rem 0;
+          margin: 1rem 0;
           font-weight: 400;
+          font-size: 20px;
           color: $buttonColor;
           font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
             Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
@@ -162,7 +164,7 @@ $cardbgColor: #2b1731;
       width: 100%;
       max-width: 1200px;
       margin: 0 auto;
-      padding: 1.5rem 3rem;
+      padding: 1.5rem 5rem;
       position: relative;
       .menu,
       .phone {
@@ -806,6 +808,7 @@ $cardbgColor: #2b1731;
   .header {
     .navs {
       .navbar {
+        
         background: #2a2a2a;
         .left-links {
           display: none;
@@ -1000,7 +1003,7 @@ $cardbgColor: #2b1731;
     margin: 1rem 0;
     .navs {
       .navbar {
-        padding: 2rem 1rem;
+        padding: 1rem 1rem;
         .logo {
           .logo-icon {
             font-size: 2rem;
