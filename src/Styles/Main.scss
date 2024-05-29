@@ -828,10 +828,6 @@ $cardbgColor: #2b1731;
           h1 {
             line-height: 50px;
           }
-          p {
-          }
-          .btn-group {
-          }
         }
       }
     }
@@ -890,18 +886,13 @@ $cardbgColor: #2b1731;
 @media screen and (max-width: "768px") {
   .header {
     height: 480px;
-    .navs {
-      .navbar {
-      }
-    }
     .header-wrapper {
       .main {
         .main-title {
           h1 {
             line-height: 40px;
           }
-          p {
-          }
+        
           .btn-group {
             flex-wrap: wrap;
           }
@@ -911,8 +902,6 @@ $cardbgColor: #2b1731;
   }
   .service {
     .dream {
-      h2 {
-      }
       .dream-home {
         .dream_card {
           width: calc(100% / 2);
@@ -985,8 +974,6 @@ $cardbgColor: #2b1731;
             .number {
               height: 2.2rem;
             }
-            button {
-            }
           }
         }
       }
@@ -1044,28 +1031,14 @@ $cardbgColor: #2b1731;
       }
       .service-cards {
         gap: 1.2rem;
-        .card {
-          .card-text {
-          }
-          &.card1,
-          &.card2,
-          &.card3,
-          &.card4 {
-          }
-        }
       }
     }
     .dream {
-      h2 {
-      }
       .dream-home {
         margin: 0;
 
         .dream_card {
           width: calc(100%);
-
-          img {
-          }
         }
       }
     }
@@ -1093,8 +1066,6 @@ $cardbgColor: #2b1731;
     .news-wrapper {
       h2 {
         margin-bottom: 1rem;
-      }
-      .news-cards {
       }
     }
     .news-images {
