@@ -488,6 +488,7 @@ export default function Main() {
           </div>
         </div>
       </section>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus, illum quia dolore ullam facilis doloremque. Fugiat non quae eaque cum, quidem deserunt unde optio ut quo architecto minima iste alias neque beatae dicta quam ducimus repudiandae consequatur facere obcaecati ea consectetur sunt aspernatur. Facere, harum inventore. Magnam similique dolorum quas voluptatibus recusandae eius non at! Mollitia quis inventore aliquid libero blanditiis maxime cum, porro, eaque debitis pariatur totam quisquam, tempore perspiciatis nemo. Iste molestias iusto accusantium libero odio exercitationem. Fugiat aliquam tempora dignissimos, error veritatis necessitatibus. Nihil quia molestias, commodi natus quae quidem non sint fuga animi. Ratione, delectus sit.</p>
       <footer className="footer">
         <div className="footer-wrapper">
           <div className="cards">
