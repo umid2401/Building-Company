@@ -12,7 +12,9 @@ import "aos/dist/aos.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faTelegram } from "@fortawesome/free-brands-svg-icons";
 import CountUp from "react-countup";
-
+import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 export default function Main() {
   const { t, i18n } = useTranslation();
   const [lang, setLang] = useState("UZ");
@@ -150,9 +152,9 @@ export default function Main() {
   ];
   const [showBadge, setShowBadge] = useState(false);
   const [background, setBackground] = useState("transparent");
-  const [name, setName]=useState("");
-  const [phone, setPhone]=useState("");
-  const [message, setMessage]=useState("");
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
   const [menu, setMenu] = useState(false);
   const service = useRef();
   const navbar = useRef();
@@ -177,7 +179,7 @@ export default function Main() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-   const scrollTosection = (section) => {
+  const scrollTosection = (section) => {
     const yOffset = -navbar.current.offsetHeight; // 100px tepadan offset
     const y =
       section.current.getBoundingClientRect().top +
@@ -211,11 +213,51 @@ export default function Main() {
   const showMenu = () => {
     checkFunction();
   };
-  const handleSubmit = (e) =>{
-    e.prevenDefault();
-     console.log(name,phone,message)
-  }
- 
+  const botToken = "7488579907:AAFN1RgGndM9DL4FT4tb3zUeYyrMwGmIRKE";
+  const id = "6479931688";
+  const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+  const data = `Name: ${name}\nNumber: ${phone}\nMessage:${message}`;
+  const refName = useRef();
+  const refPhone = useRef();
+  const refMessage = useRef();
+  const handleSubmit = async (e) => {
+    
+    e.preventDefault();
+    if (name !== "" && phone !== "" && message !== "") {
+      try {
+        await axios.post(url, {
+          chat_id: id,
+          text: data,
+        });
+        toast.success(t("data"), {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
+        setName("");
+        setPhone("");
+        setMessage("");
+      } catch (error) {}
+    } else {
+      toast.warn(t("form"), {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+    }
+
+    
+  };
 
   return (
     <div>
@@ -457,25 +499,35 @@ export default function Main() {
         </div>
       </section>
       <section ref={contact} className="contact">
+        <ToastContainer />
         <div className="contact-wrapper">
           <div className="form-text">
             <h2>{t("Do you have any questions, suggestions or requests?")} </h2>
             <div className="form">
-              <form action="" >
+              <form action="">
                 <div data-aos="fade-up" className="name">
-                  <input onChange={(e)=>setName(e.target.value)} required type="text" placeholder={t("Your name")} />
+                  <input
+                    onChange={(e) => setName(e.target.value)}
+                    ref={refName}
+                    value={name}
+                    type="text"
+                    placeholder={t("Your name")}
+                  />
                 </div>
                 <div data-aos="fade-up" className="number">
                   <input
-                    required
+                    ref={refPhone}
+                    value={phone}
                     type="number"
                     placeholder={t("Your phone number")}
-                     onChange={(e)=>setPhone(e.target.value)}
+                    onChange={(e) => setPhone(e.target.value)}
                   />
                 </div>
                 <div data-aos="fade-up" className="message">
                   <textarea
-                     onChange={(e)=>setMessage(e.target.value)}
+                    ref={refMessage}
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
                     resource=""
                     placeholder={t("Your message")}
                     name=""
@@ -490,7 +542,19 @@ export default function Main() {
           </div>
         </div>
       </section>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus, illum quia dolore ullam facilis doloremque. Fugiat non quae eaque cum, quidem deserunt unde optio ut quo architecto minima iste alias neque beatae dicta quam ducimus repudiandae consequatur facere obcaecati ea consectetur sunt aspernatur. Facere, harum inventore. Magnam similique dolorum quas voluptatibus recusandae eius non at! Mollitia quis inventore aliquid libero blanditiis maxime cum, porro, eaque debitis pariatur totam quisquam, tempore perspiciatis nemo. Iste molestias iusto accusantium libero odio exercitationem. Fugiat aliquam tempora dignissimos, error veritatis necessitatibus. Nihil quia molestias, commodi natus quae quidem non sint fuga animi. Ratione, delectus sit.</p>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus,
+        illum quia dolore ullam facilis doloremque. Fugiat non quae eaque cum,
+        quidem deserunt unde optio ut quo architecto minima iste alias neque
+        beatae dicta quam ducimus repudiandae consequatur facere obcaecati ea
+        consectetur sunt aspernatur. Facere, harum inventore. Magnam similique
+        dolorum quas voluptatibus recusandae eius non at! Mollitia quis
+        inventore aliquid libero blanditiis maxime cum, porro, eaque debitis
+        pariatur totam quisquam, tempore perspiciatis nemo. Iste molestias iusto
+        accusantium libero odio exercitationem. Fugiat aliquam tempora
+        dignissimos, error veritatis necessitatibus. Nihil quia molestias,
+        commodi natus quae quidem non sint fuga animi. Ratione, delectus sit.
+      </p>
       <footer className="footer">
         <div className="footer-wrapper">
           <div className="cards">

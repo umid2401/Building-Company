@@ -1,6 +1,8 @@
 {
   "uz": {
     "translation": {
+      "data": "Ma'lumotlar muvaffaqiyatli yuborildi",
+      "form": "Maydonni to'ldirish talab etiladi",
       "Information": "Ma'lumotlar",
       "About Us": "Biz haqimizda",
       "Enterprises": "Korxonalar",
@@ -11,7 +13,7 @@
       "UZ": "UZ",
       "Ru": "Ru",
       "exc": "Hamma narsada mukammallik",
-      "dream":"Sizning orzuyingizdagi uy",
+      "dream": "Sizning orzuyingizdagi uy",
       "You can get free information from our company's specialists": "Bizning kompaniya mutaxassislaridan bepul ma'lumot olishingiz mumkin",
       "Documents clearance": "Hujjatlar tozalash",
       "Repair correction service": "Ta'mirni to'g'rilash xizmati",
@@ -49,7 +51,7 @@
       "build": "Biz shunchaki loyihalar yaratmaymiz, yangi imkoniyatlar yaratamiz. Davlat miqyosidagi inshootlarni qurish orqali biz kelajakni quryapmiz. Biz atrof-muhit haqida qayg'uramiz: kompaniya binolar va infratuzilmani qurish va ulardan foydalanish bilan bog'liq ekologik jihatlar uchun to'liq javobgarlikni o'z zimmasiga oladi.",
       "Do you have any questions, suggestions or requests?": "Sizda savollar, takliflar yoki so'rovlaringiz bormi?",
       "Your name": "Ismingiz",
-      "Learn More":"Batafsil bilish",
+      "Learn More": "Batafsil bilish",
       "Your phone number": "Telefon raqamingiz",
       "Your message": "Xabaringiz",
       "Sending": "Yuborish",
@@ -63,6 +65,8 @@
   },
   "en": {
     "translation": {
+      "data": "Data sent successfully",
+      "form": "A field is required",
       "Information": "Information",
       "About Us": "About Us",
       "Enterprises": "Enterprises",
@@ -108,7 +112,7 @@
       "newDesc-b4": "We continue to introduce you to the multifunctional objects of Discover Invest. One of them is the Yangi Choshtepa residential complex built in the Yangihayot district of Tashkent. The total construction area is 12 hectares. To date, 29 houses have been built.",
       "Exchange ideas with partners": "Exchange ideas with partners",
       "Building Company": "Building Company",
-      "build":"We don't just create projects, we create new opportunities. By building state-scale facilities, we are building the future. We care about the environment: the company takes full responsibility for environmental aspects associated with the construction and operation of buildings and infrastructure",
+      "build": "We don't just create projects, we create new opportunities. By building state-scale facilities, we are building the future. We care about the environment: the company takes full responsibility for environmental aspects associated with the construction and operation of buildings and infrastructure",
       "Do you have any questions, suggestions or requests?": "Do you have any questions, suggestions or requests?",
       "Your name": "Your name",
       "Your phone number": "Your phone number",
@@ -124,6 +128,8 @@
   },
   "ru": {
     "translation": {
+      "data": "Данные успешно отправлены",
+      "form": "Поле обязательно",
       "Information": "Информация",
       "About Us": "О нас",
       "Enterprises": "Предприятия",
@@ -170,7 +176,7 @@
       "newDesc-b4": "Мы продолжаем знакомить вас с многофункциональными объектами Discover Invest. Один из них — жилой комплекс Янг Чоштепа, построенный в районе Янгихает города Ташкента. Общая площадь строительства составляет 12 гектаров. На сегодняшний день построено 29 домов.",
       "Exchange ideas with partners": "Обмен идеями с партнерами",
       "Building Company": "Строительная компания",
-      "build":"Мы не просто создаём проекты, мы создаем новые возможности. Строя объекты государственного масштаба, мы строим будущее. Мы заботимся об окружающей среде: компания берет на себя полную ответственность за экологические аспекты, связанные со строительством и эксплуатацией зданий и инфраструктуры",
+      "build": "Мы не просто создаём проекты, мы создаем новые возможности. Строя объекты государственного масштаба, мы строим будущее. Мы заботимся об окружающей среде: компания берет на себя полную ответственность за экологические аспекты, связанные со строительством и эксплуатацией зданий и инфраструктуры",
       "Learn More": "Узнать больше",
       "Do you have any questions, suggestions or requests?": "У вас есть какие-либо вопросы, предложения или запросы?",
       "Your name": "Ваше имя",
