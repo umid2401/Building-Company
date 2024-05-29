@@ -7,8 +7,8 @@ import {
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import "../Styles/Main.scss";
-import AOS from 'aos';
-import 'aos/dist/aos.css'; 
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faTelegram } from "@fortawesome/free-brands-svg-icons";
 import CountUp from "react-countup";
@@ -36,7 +36,7 @@ export default function Main() {
   };
   // setBg
   useEffect(() => {
-   AOS.init({duration:1000})
+    AOS.init({ duration: 1000 });
     const handleScroll = () => {
       const navbarHeight = 60;
       if (window.innerWidth > 992) {
@@ -80,7 +80,7 @@ export default function Main() {
     checkFunction();
   };
   // service section cardlari
-  
+
   const service_card = [
     {
       id: 1,
@@ -121,7 +121,7 @@ export default function Main() {
   const project_card = [
     {
       id: "1",
-      animation:"fade-right",
+      animation: "fade-right",
       url: "Images/magic.webp",
       projectName: t("Magic City"),
       projectDesc: t(
@@ -130,7 +130,7 @@ export default function Main() {
     },
     {
       id: "2",
-      animation:"fade-left",
+      animation: "fade-left",
       url: "Images/garden.webp",
       projectName: t("Gardens Residence"),
       projectDesc: t(
@@ -139,7 +139,7 @@ export default function Main() {
     },
     {
       id: "3",
-      animation:"fade-right",
+      animation: "fade-right",
       url: "Images/fonon.webp",
       projectName: t("Fonon"),
       projectDesc: t(
@@ -148,7 +148,7 @@ export default function Main() {
     },
     {
       id: "4",
-      animation:"fade-left",
+      animation: "fade-left",
       url: "Images/invento.webp",
       projectName: t("Invento"),
       projectDesc: t(
@@ -157,7 +157,7 @@ export default function Main() {
     },
     {
       id: "5",
-      animation:"fade-right",
+      animation: "fade-right",
       url: "Images/prezident.webp",
       projectName: t("Presidential School"),
       projectDesc: t(
@@ -166,7 +166,7 @@ export default function Main() {
     },
     {
       id: "6",
-      animation:"fade-left",
+      animation: "fade-left",
       url: "Images/bouleward.webp",
       projectName: t("Boulevard"),
       projectDesc: t(
@@ -329,7 +329,7 @@ export default function Main() {
       <section ref={service} className="service">
         <div className="service-wrapper">
           <h2>{t("Our services")} </h2>
-          <div className="service-cards" style={{overflow:"hidden"}}>
+          <div className="service-cards" style={{ overflow: "hidden" }}>
             {service_card &&
               service_card.map((item, index) => (
                 <div
@@ -393,10 +393,14 @@ export default function Main() {
       <section ref={projects} className="project">
         <div className="project-wrapper">
           <h2>{t("Our Projects")} </h2>
-          <div className="project-cards" style={{overflow:"hidden"}}>
+          <div className="project-cards" style={{ overflow: "hidden" }}>
             {project_card &&
               project_card.map((item, index) => (
-                <div key={index} data-aos={item.animation} className="project-card">
+                <div
+                  key={index}
+                  data-aos={item.animation}
+                  className="project-card"
+                >
                   <div className="project-image">
                     <img src={item.url} alt="There is an error" />
                   </div>
@@ -412,7 +416,7 @@ export default function Main() {
       <section ref={news} className="news">
         <div className="news-wrapper">
           <h2>{t("Our news")}</h2>
-          <div className="news-cards" style={{overflow:"hidden"}}>
+          <div className="news-cards" style={{ overflow: "hidden" }}>
             {new_card &&
               new_card.map((item, index) => (
                 <div
@@ -476,10 +480,29 @@ export default function Main() {
                     id=""
                   ></textarea>
                 </div>
-                <button data-aos="fade-up" type="submit">{t("Sending")} </button>
+                <button data-aos="fade-up" type="submit">
+                  {t("Sending")}{" "}
+                </button>
               </form>
             </div>
           </div>
+        </div>
+      </section>
+      <section>
+        <div className="wrapper">
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex
+            voluptate explicabo fugiat voluptates quam, iste rem? Earum incidunt
+            mollitia quidem provident delectus architecto! Animi accusamus,
+            voluptatum sit rem ullam maiores velit! Quidem, sed laborum,
+            eligendi nam dolorem, quia natus soluta alias ex repellendus
+            repellat distinctio! Illum quod, omnis quae quibusdam asperiores
+            quisquam quos rem dolor maxime. Incidunt facilis quibusdam eius cum
+            officia accusantium, quidem perferendis autem rem at a ipsam
+            nesciunt sunt nisi fugiat blanditiis tempore recusandae nam dolore.
+            Fuga, illo ipsa est vero totam ipsam esse similique vitae animi quam
+            porro voluptas voluptatem cumque dolorem iste. Atque, esse corporis!
+          </p>
         </div>
       </section>
       <footer className="footer">
