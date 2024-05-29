@@ -14,73 +14,48 @@ import { faInstagram, faTelegram } from "@fortawesome/free-brands-svg-icons";
 import CountUp from "react-countup";
 
 export default function Main() {
-  const [showBadge, setShowBadge] = useState(false);
-  const [background, setBackground] = useState("transparent");
-  const [menu, setMenu] = useState(false);
-  const service = useRef();
-  const navbar = useRef();
-  const news = useRef();
-  const contact = useRef();
-  const projects = useRef();
-  const information = useRef();
-  const scrollTosection = (section) => {
-    const yOffset = -navbar.current.offsetHeight; // 100px tepadan offset
-    const y =
-      section.current.getBoundingClientRect().top +
-      window.pageYOffset +
-      yOffset;
-    window.scrollTo({ top: y, behavior: "smooth" });
-    if (window.innerWidth < 968) {
-      setMenu(!menu);
-    }
-  };
-  // setBg
-  useEffect(() => {
-    AOS.init({ duration: 1000 });
-    const handleScroll = () => {
-      const navbarHeight = 60;
-      if (window.innerWidth > 992) {
-        if (window.scrollY >= navbarHeight) {
-          setBackground("#8b7438");
-        } else {
-          setBackground("transparent");
-        }
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  // Til o'zgartirish bilan bog'liq funksiyalar
   const { t, i18n } = useTranslation();
   const [lang, setLang] = useState("UZ");
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
-    if (lng === "uz") {
-      setLang("UZ");
-    } else if (lng === "en") {
-      setLang("EN");
-    } else {
-      setLang("RU");
-    }
-    setShowBadge(!showBadge);
-    checkFunction();
-  };
-  const checkFunction = () => {
-    if (window.innerWidth < 992) {
-      setMenu(!menu);
-    }
-  };
-  const showLangs = () => {
-    setShowBadge(!showBadge);
-  };
-  const showMenu = () => {
-    checkFunction();
-  };
-  // service section cardlari
-
+  const new_card = [
+    {
+      id: 1,
+      url: "Images/construction.jpg",
+      newsName: t("newDesc-a"),
+      newsDesc: t("newDesc-b"),
+      animation: "fade-right",
+    },
+    {
+      id: 2,
+      url: "Images/news1.jpg",
+      newsName: t("newDesc-a2"),
+      newsDesc: t("newDesc-b2"),
+      animation: "fade-left",
+    },
+    {
+      id: 3,
+      url: "Images/news2.jpg",
+      newsName: t("newDesc-a3"),
+      newsDesc: t("newDesc-b3"),
+      animation: "fade-right",
+    },
+    {
+      id: 4,
+      url: "Images/news3.jpg",
+      newsName: t("newDesc-a4"),
+      newsDesc: t("newDesc-b4"),
+      animation: "fade-left",
+    },
+  ];
+  const new_image = [
+    { id: 1, url: "Images/gallery1.jpg", src: "There is an error" },
+    { id: 2, url: "Images/gallery2.jpg", src: "There is an error" },
+    { id: 3, url: "Images/gallery3.jpg", src: "There is an error" },
+    { id: 4, url: "Images/gallery4.jpg", src: "There is an error" },
+    { id: 5, url: "Images/gallery5.jpg", src: "There is an error" },
+    { id: 6, url: "Images/gallery6.jpg", src: "There is an error" },
+    { id: 7, url: "Images/gallery7.jpg", src: "There is an error" },
+    { id: 8, url: "Images/gallery8.jpg", src: "There is an error" },
+  ];
   const service_card = [
     {
       id: 1,
@@ -117,7 +92,6 @@ export default function Main() {
     { id: "5", imgUrl: "Images/house5.jpg" },
     { id: "6", imgUrl: "Images/house6.jpg" },
   ];
-  //project cardlar
   const project_card = [
     {
       id: "1",
@@ -174,48 +148,73 @@ export default function Main() {
       ),
     },
   ];
-  //news cardlar
-  const new_card = [
-    {
-      id: 1,
-      url: "Images/construction.jpg",
-      newsName: t("newDesc-a"),
-      newsDesc: t("newDesc-b"),
-      animation: "fade-right",
-    },
-    {
-      id: 2,
-      url: "Images/news1.jpg",
-      newsName: t("newDesc-a2"),
-      newsDesc: t("newDesc-b2"),
-      animation: "fade-left",
-    },
-    {
-      id: 3,
-      url: "Images/news2.jpg",
-      newsName: t("newDesc-a3"),
-      newsDesc: t("newDesc-b3"),
-      animation: "fade-right",
-    },
-    {
-      id: 4,
-      url: "Images/news3.jpg",
-      newsName: t("newDesc-a4"),
-      newsDesc: t("newDesc-b4"),
-      animation: "fade-left",
-    },
-  ];
-  const new_image = [
-    { id: 1, url: "Images/gallery1.jpg", src: "There is an error" },
-    { id: 2, url: "Images/gallery2.jpg", src: "There is an error" },
-    { id: 3, url: "Images/gallery3.jpg", src: "There is an error" },
-    { id: 4, url: "Images/gallery4.jpg", src: "There is an error" },
-    { id: 5, url: "Images/gallery5.jpg", src: "There is an error" },
-    { id: 6, url: "Images/gallery6.jpg", src: "There is an error" },
-    { id: 7, url: "Images/gallery7.jpg", src: "There is an error" },
-    { id: 8, url: "Images/gallery8.jpg", src: "There is an error" },
-  ];
-  //
+  const [showBadge, setShowBadge] = useState(false);
+  const [background, setBackground] = useState("transparent");
+  const [name, setName]=useState("");
+  const [phone, setPhone]=useState("");
+  const [message, setMessage]=useState("");
+  const [menu, setMenu] = useState(false);
+  const service = useRef();
+  const navbar = useRef();
+  const news = useRef();
+  const contact = useRef();
+  const projects = useRef();
+  const information = useRef();
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+    const handleScroll = () => {
+      const navbarHeight = 60;
+      if (window.innerWidth > 992) {
+        if (window.scrollY >= navbarHeight) {
+          setBackground("#8b7438");
+        } else {
+          setBackground("transparent");
+        }
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+   const scrollTosection = (section) => {
+    const yOffset = -navbar.current.offsetHeight; // 100px tepadan offset
+    const y =
+      section.current.getBoundingClientRect().top +
+      window.pageYOffset +
+      yOffset;
+    window.scrollTo({ top: y, behavior: "smooth" });
+    if (window.innerWidth < 968) {
+      setMenu(!menu);
+    }
+  };
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+    if (lng === "uz") {
+      setLang("UZ");
+    } else if (lng === "en") {
+      setLang("EN");
+    } else {
+      setLang("RU");
+    }
+    setShowBadge(!showBadge);
+    checkFunction();
+  };
+  const checkFunction = () => {
+    if (window.innerWidth < 992) {
+      setMenu(!menu);
+    }
+  };
+  const showLangs = () => {
+    setShowBadge(!showBadge);
+  };
+  const showMenu = () => {
+    checkFunction();
+  };
+  const handleSubmit = () =>{
+     console.log(name,phone,message)
+  }
+ 
 
   return (
     <div>
@@ -461,19 +460,21 @@ export default function Main() {
           <div className="form-text">
             <h2>{t("Do you have any questions, suggestions or requests?")} </h2>
             <div className="form">
-              <form action="">
+              <form action="" onSubmit={handleSubmit}>
                 <div data-aos="fade-up" className="name">
-                  <input required type="text" placeholder={t("Your name")} />
+                  <input onChange={(e)=>setName(e.target.value)} required type="text" placeholder={t("Your name")} />
                 </div>
                 <div data-aos="fade-up" className="number">
                   <input
                     required
                     type="number"
                     placeholder={t("Your phone number")}
+                     onChange={(e)=>setPhone(e.target.value)}
                   />
                 </div>
                 <div data-aos="fade-up" className="message">
                   <textarea
+                     onChange={(e)=>setMessage(e.target.value)}
                     resource=""
                     placeholder={t("Your message")}
                     name=""
