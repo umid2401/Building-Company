@@ -211,7 +211,8 @@ export default function Main() {
   const showMenu = () => {
     checkFunction();
   };
-  const handleSubmit = () =>{
+  const handleSubmit = (e) =>{
+    e.prevenDefault();
      console.log(name,phone,message)
   }
  
@@ -460,7 +461,7 @@ export default function Main() {
           <div className="form-text">
             <h2>{t("Do you have any questions, suggestions or requests?")} </h2>
             <div className="form">
-              <form action="" onSubmit={handleSubmit}>
+              <form action="" >
                 <div data-aos="fade-up" className="name">
                   <input onChange={(e)=>setName(e.target.value)} required type="text" placeholder={t("Your name")} />
                 </div>
@@ -481,7 +482,7 @@ export default function Main() {
                     id=""
                   ></textarea>
                 </div>
-                <button data-aos="fade-up" type="submit">
+                <button data-aos="fade-up" onClick={handleSubmit}>
                   {t("Sending")}{" "}
                 </button>
               </form>
