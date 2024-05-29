@@ -3,8 +3,8 @@ import { useTranslation } from "react-i18next";
 import {
   faBars,
   faBuildingColumns,
-  faPhone,
   faXmark,
+  faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 import "../Styles/Main.scss";
 import AOS from "aos";
@@ -17,7 +17,11 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 export default function Main() {
   const { t, i18n } = useTranslation();
-  const [lang, setLang] = useState("UZ");
+
+  const [lang, setLang] = useState(localStorage.getItem("lan","UZ"));
+  useEffect(()=>{
+    localStorage.setItem("lan",lang);
+  },[lang])
   const new_card = [
     {
       id: 1,
@@ -163,6 +167,7 @@ export default function Main() {
   const projects = useRef();
   const information = useRef();
   useEffect(() => {
+   
     AOS.init({ duration: 1000 });
     const handleScroll = () => {
       const navbarHeight = 60;
@@ -178,9 +183,9 @@ export default function Main() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [lang]);
   const scrollTosection = (section) => {
-    const yOffset = -navbar.current.offsetHeight; // 100px tepadan offset
+    const yOffset = -navbar.current.offsetHeight; // 
     const y =
       section.current.getBoundingClientRect().top +
       window.pageYOffset +
@@ -192,6 +197,7 @@ export default function Main() {
   };
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
+    localStorage.setItem('i18nextLng', lng);
     if (lng === "uz") {
       setLang("UZ");
     } else if (lng === "en") {
@@ -199,7 +205,10 @@ export default function Main() {
     } else {
       setLang("RU");
     }
-    setShowBadge(!showBadge);
+    if(window.innerWidth>992){
+
+      setShowBadge(!showBadge);
+    }
     checkFunction();
   };
   const checkFunction = () => {
@@ -221,7 +230,6 @@ export default function Main() {
   const refPhone = useRef();
   const refMessage = useRef();
   const handleSubmit = async (e) => {
-    
     e.preventDefault();
     if (name !== "" && phone !== "" && message !== "") {
       try {
@@ -359,7 +367,7 @@ export default function Main() {
           <main className="main">
             <div className="main-title">
               <h1 title="company-name">{t("Building Company")}</h1>
-              <p>{t("Excellence")}</p>
+              <p>{t("exc")}</p>
               <div className="btn-group">
                 <button>{t("Our Projects")}</button>
                 <button>{t("connect")}</button>
@@ -397,25 +405,25 @@ export default function Main() {
                 <span>
                   <CountUp start={0} end={120} duration={2.75} /> +
                 </span>
-                <p>Number of employes</p>
+                <p>{t("Number of employes")} </p>
               </div>
               <div className="count">
                 <span>
                   <CountUp start={0} end={43} duration={2.75} /> +
                 </span>
-                <p>Objects</p>
+                <p>{t("Objects")} </p>
               </div>
               <div className="count">
                 <span>
                   <CountUp start={0} end={250} duration={2.75} /> +
                 </span>
-                <p>Special equipment</p>
+                <p>{t("Special equipment")} </p>
               </div>
               <div className="count">
                 <span>
                   <CountUp start={0} end={2} duration={2.75} /> +
                 </span>
-                <p>14 years on the market</p>
+                <p>{t("14 years on the market")} </p>
               </div>
             </div>
           </div>
@@ -492,8 +500,8 @@ export default function Main() {
       </section>
       <section ref={information} className="information">
         <div className="information-wrapper">
-          <h3 data-aos="fade-up">{t("Building Company")} </h3>
-          <h2 data-aos="fade-up">{t("Building Company")} </h2>
+          <h3 data-aos="fade-up">Building Company .... </h3>
+          <h2 data-aos="fade-up">Building Company </h2>
           <p data-aos="fade-up">{t("build")} </p>
           <button data-aos="fade-up">{t("Learn More")} </button>
         </div>
@@ -542,19 +550,7 @@ export default function Main() {
           </div>
         </div>
       </section>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus,
-        illum quia dolore ullam facilis doloremque. Fugiat non quae eaque cum,
-        quidem deserunt unde optio ut quo architecto minima iste alias neque
-        beatae dicta quam ducimus repudiandae consequatur facere obcaecati ea
-        consectetur sunt aspernatur. Facere, harum inventore. Magnam similique
-        dolorum quas voluptatibus recusandae eius non at! Mollitia quis
-        inventore aliquid libero blanditiis maxime cum, porro, eaque debitis
-        pariatur totam quisquam, tempore perspiciatis nemo. Iste molestias iusto
-        accusantium libero odio exercitationem. Fugiat aliquam tempora
-        dignissimos, error veritatis necessitatibus. Nihil quia molestias,
-        commodi natus quae quidem non sint fuga animi. Ratione, delectus sit.
-      </p>
+    
       <footer className="footer">
         <div className="footer-wrapper">
           <div className="cards">

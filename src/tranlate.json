@@ -3,6 +3,7 @@
     "translation": {
       "data": "Ma'lumotlar muvaffaqiyatli yuborildi",
       "form": "Maydonni to'ldirish talab etiladi",
+      "Number of employes":"Xodimlar soni",
       "Information": "Ma'lumotlar",
       "About Us": "Biz haqimizda",
       "Enterprises": "Korxonalar",
@@ -15,7 +16,7 @@
       "exc": "Hamma narsada mukammallik",
       "dream": "Sizning orzuyingizdagi uy",
       "You can get free information from our company's specialists": "Bizning kompaniya mutaxassislaridan bepul ma'lumot olishingiz mumkin",
-      "Documents clearance": "Hujjatlar tozalash",
+      "Documents clearance": "Hujjatlar tahrirlash",
       "Repair correction service": "Ta'mirni to'g'rilash xizmati",
       "Team of professionals": "Professionallar jamoasi",
       "Our company": "Bizning kompaniya",
@@ -24,7 +25,7 @@
       "Special equipment": "Maxsus jihozlar",
       "14 years on the market": "Bozorda 14 yil",
       "Your dream home": "Sizning orzuyingizdagi uy",
-      "Our Projects": "Bizning loyihalarimiz",
+     
       "Magic City": "Sehrli shahar",
       "This is a large-scale socially significant project. The cultural and entertainment cluster in Tashkent is one of the new attractions.": "Bu katta miqyosda ijtimoiy ahamiyatga ega loyiha. Toshkentdagi madaniy-ibodat markazi yangi tortishlaridan biri.",
       "Gardens Residence": "Bag'lar joyi",
@@ -56,9 +57,9 @@
       "Your message": "Xabaringiz",
       "Sending": "Yuborish",
       "Subscribe to our social networks": "Ijtimoiy tarmoqlarimizga obuna bo'ling",
-      "Our company": "Bizning kompaniya",
-      "Communication": "Aloqa",
-      "News": "Yangiliklar",
+     
+    
+      "Our services":"Bizning xizmatlar",
       "Our Projects": "Bizning loyihalarimiz",
       "connect": "Ulanish"
     }
@@ -71,8 +72,8 @@
       "About Us": "About Us",
       "Enterprises": "Enterprises",
       "Our advantages": "Our advantages",
-      "News": "News",
-      "Communication": "Communication",
+       "Number of employes":"Number of employes",
+     
       "EN": "EN",
       "UZ": "UZ",
       "Ru": "Ru",
@@ -88,7 +89,7 @@
       "Special equipment": "Special equipment",
       "14 years on the market": "14 years on the market",
       "Your dream home": "Your dream home",
-      "Our Projects": "Our Projects",
+      
       "Magic City": "Magic City",
       "This is a large-scale socially significant project. The cultural and entertainment cluster in Tashkent is one of the new attractions.": "This is a large-scale socially significant project. The cultural and entertainment cluster in Tashkent is one of the new attractions.",
       "Gardens Residence": "Gardens Residence",
@@ -119,7 +120,7 @@
       "Your message": "Your message",
       "Sending": "Sending",
       "Subscribe to our social networks": "Subscribe to our social networks",
-      "Our company": "Our company",
+      
       "Communication": "Communication",
       "News": "News",
       "Our Projects": "Our Projects",
@@ -134,8 +135,8 @@
       "About Us": "О нас",
       "Enterprises": "Предприятия",
       "Our advantages": "Наши преимущества",
-      "News": "Новости",
-      "Communication": "Связь",
+    
+      "Number of employes":"Количество работников",
       "EN": "EN",
       "UZ": "UZ",
       "Ru": "Ru",
@@ -146,13 +147,13 @@
       "Documents clearance": "Оформление документов",
       "Repair correction service": "Сервис по исправлению ремонта",
       "Team of professionals": "Команда профессионалов",
-      "Our company": "Наша компания",
+     
       "Number of employees": "Количество сотрудников",
       "Objects": "Объекты",
       "Special equipment": "Специальное оборудование",
       "14 years on the market": "14 лет на рынке",
       "Your dream home": "Ваш дом мечты",
-      "Our Projects": "Наши проекты",
+     
       "Magic City": "Magic City",
       "This is a large-scale socially significant project. The cultural and entertainment cluster in Tashkent is one of the new attractions.": "Это крупномасштабный социально значимый проект. Культурно-развлекательный кластер в Ташкенте является одной из новых достопримечательностей.",
       "Gardens Residence": "Gardens Residence",

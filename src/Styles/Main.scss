@@ -812,6 +812,9 @@ $cardbgColor: #2b1731;
         }
         .langs {
           display: none;
+          .hide-lang{
+            display: none;
+          }
         }
         .right-links {
           display: none;
